@@ -284,7 +284,7 @@ h1{
 }
 
 .customer_order, .cart_item_collection{
-    max-height: 250px;
+    max-height: 255px;
     overflow: auto;
 }
 
