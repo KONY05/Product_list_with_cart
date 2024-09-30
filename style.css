@@ -39,6 +39,7 @@ body{
 }
 
 h1{
+    font-weight: 700;
     margin-bottom: 15px;
 }
 
@@ -251,9 +252,9 @@ h1{
     background-color: var(--overlay);
     z-index: 90;
     position: relative;
-    height: 150vh;
+    height: 300vh;
     overflow: none !important;
-    top: -160vh;
+    top: -200vh;
 }
 
 .modal{
@@ -283,9 +284,10 @@ h1{
 }
 
 .customer_order, .cart_item_collection{
-    max-height: 300px;
+    max-height: 250px;
     overflow: auto;
 }
+
 
 .total_order{
     background-color: var(--background-color);
@@ -340,4 +342,130 @@ h1{
     padding: 15px 0px;
     margin-top: 22px;
     cursor: pointer;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1024px){
+    .container{
+        margin: 55px 25px;
+    }
+
+    .cart{
+        width: 325px;
+    }
+}
+
+@media (max-width: 768px){
+    body{
+        display: flex;
+        justify-content: center;
+    }
+
+    .container{
+        margin: 30px 0;
+        grid-template-columns: 500px;
+        grid-template-rows: 1fr minmax(248px, auto);
+        place-items: center;
+    }
+
+    .food-items_grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(9, 1fr);
+        gap: 20px;
+    }
+
+    #cart_container{
+        margin-top: 30px;
+    }
+
+    .cart{
+        width: 350px;
+        position: relative;
+    }
+
+    .food-item_img > img{
+        width: 350px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .addtocartBtn{
+        position: absolute;
+        margin-top: -55px;
+        margin-left: 100px;
+    }
+
+    .overlay{
+        position: fixed;
+        height: 200vh;
+        width: 150vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .modal{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media (max-width: 425px){
+    .container{
+        grid-template-columns: 425px;
+    }
+
+    .modal{
+        width: 400px;
+    }
+
+    #new_orderBtn{
+        width: 340px;
+    }
+}
+
+@media (max-width: 375px){
+    .container{
+        grid-template-columns: 375px;
+    }
+
+    .food-item_img > img, .cart{
+        width: 340px;
+    }
+
+    .modal{
+        width: 355px;
+    }
+
+    #new_orderBtn{
+        width: 275px;
+    }
+
+    .customer_order{
+        max-height: 215px;
+    }
+}
+
+@media (max-width: 320px){
+    .container{
+        grid-template-columns: 320px;
+    }
+
+    .food-item_img > img, .cart{
+        width: 305px;
+    }
+
+    #confirmBtn{
+        width: 265px;
+    }
+
+    .modal{
+        width: 310px;
+    }
+
+    #new_orderBtn{
+        width: 250px;
+    }
 }
